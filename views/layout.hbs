@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://kit.fontawesome.com/70fdf0ced3.js" crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+	<title>{{siteTitle}} - {{title}}</title>
+		
+</head>
+<body>
+		<div class="main">
+				 <div class="bg-img">
+
+					{{#if session.loggedin}}
+					<div class="container">
+						<img class="menu" src="{{session.avatarUrl}}" alt="Avatar" width="75" height="75" class="avatar">
+						<form action="settings">
+							<button type="submit" class="loginButton">Settings</button>
+						</form><br>
+						<form method="post" action="logout">
+							<button type="submit" class="loginButton">Logout</button>
+						</form>
+					</div>
+					{{else}}
+					<form method="post" action="login" class="container">
+						<input type="text" placeholder="Login" name="username" required>
+						<input type="password" placeholder="Password" name="password" required>
+						<button type="submit" class="loginButton">Login</button>
+					</form>
+					{{/if}}
+
+				</div>
+
+				<ul class="menu">
+						<li class="menu"><a href="/">Home</a></li>
+						<li class="menu"><a href="statistics">Global Statistics</a></li>
+						<li class="menu"><a href="top">Top 5</a></li>
+						<li class="menu"><a href="rules">Rules</a></li>
+						<li class="menu"><a href="search">Search</a></li>
+				</ul>
+
+				<div class="content">
+						{{{body}}}
+
+						<!--<h1>{{ pageHeader }}</h1>-->
+						<p>{{ pageContent }}</p>
+				</div>
+			 
+		</div>
+		<div class="footer">
+			<p>Liberty City Killers © 2023</p>
+		</div>
+</body>
+</html>
+
+<!--<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{title}}</title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+	</head>
+	<body>
+		{{{body}}}
+	</body>
+</html>
+-->

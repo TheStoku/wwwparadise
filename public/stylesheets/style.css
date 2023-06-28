@@ -1,0 +1,222 @@
+div.main {
+  max-width: 1080px;
+  margin: auto;
+  background-color:lavender;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+}
+
+input[type=text]:focus {
+  background-color: lightblue;
+}
+
+textarea:focus {
+  background-color: lightblue;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+div.content {
+  margin: auto;
+  /*width: 50%;*/
+  max-width: 1080px;
+  padding: 14px;
+  /*background-color: aliceblue;*/
+}
+
+body {
+  background-color:darkslateblue;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img.logo {
+  vertical-align: center;
+  max-width:1499px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(../fonts/pricedown.ttf);
+}
+
+
+ul.menu {
+  /*position: fixed;
+  top: 0;
+  width: 100%;*/
+  font-family: myFirstFont;
+  font-size: 22px;
+  /*text-shadow: 4px 4px black;*/
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  list-style-type: none;
+  margin: -4px auto;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li.menu {
+  float: left;
+}
+
+li.menu a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li.menu a:hover {
+  background-color: #111;
+}
+
+li.menu:last-child {
+  border-right: none;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+/* Footer */
+.footer {
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("/images/logo.png");
+  vertical-align: center;
+  max-width:1080px;
+  min-height: 250px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  /* Control the height and width of the image */
+  /*height: 400px;
+  max-width: 1080px;
+
+
+  /* Center and scale the image nicely */
+  /*background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;*/
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  /*margin-top: 115px;*/
+  /*margin: 10px;*/
+  max-width: 200px;
+  padding: 16px;
+  /*background-color: white;*/
+}
+
+.avatar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 16px;
+}
+
+.settings {
+  font-family: Arial, Helvetica, sans-serif;
+  color: green;
+  padding: 16px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  height: 25px;
+  padding: 15px;
+  margin: 5px 0 5px 0;
+  border: none;
+  background: #ffffff;
+  opacity: 0.8;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.loginButton {
+  background-color: #04AA6D;
+  color: white;
+  padding: 5px 5px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  height: 25px;
+  opacity: 0.8;
+  border-radius: 6px;
+}
+
+.loginButton:hover {
+  opacity: 1;
+}
+
+
+
+
+/*https://epicbootstrap.com/snippets/footer-dark*/
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#top {
+  display: inline-block;
+  margin: 16px;
+  height: 200px;
+  vertical-align: center;
+}

@@ -1,0 +1,17 @@
+<h1>Profile Settings</h1>
+
+<form method="post" action="save">
+    <label for="message">Avatar URL:</label><br>
+    <input type="text" placeholder="Avatar URL" name="avatar_url" value="{{session.avatarUrl}}">
+    <label for="message">Nickname:</label><br>
+    <input type="text" placeholder="Login" name="username" value="{{session.name}}" required>
+    <label for="message">Current Password:</label><br>
+    <input type="password" placeholder="Password" name="password" required>
+    <label for="message">New Password:</label><br>
+    <input type="password" placeholder="Password" name="new_password">
+    <label for="message">Retype new Password:</label><br>
+    <input type="password" placeholder="Password" name="new_password_2">
+    <input type="submit" value="Save">
+</form>
+
+<p class="settings">{{result}}</p>

@@ -1,0 +1,36 @@
+<h1>Find Player</h1>
+
+<form method="post" action="find">
+    <label for="message">Nickname:</label><br>
+    <input type="text" placeholder="Nickname" name="nickname" required>
+    <input type="submit" value="Search">
+</form>
+
+{{#if stats}}
+  <ul>
+    <img class="menu" src="{{stats.avatarUrl}}" alt="Avatar" width="75" height="75" class="avatar">
+    <li><b>ID:</b> {{stats.id}}</li>
+    <li><b>Name:</b> {{stats.name}}</li>
+    <li><b>Registered:</b> {{stats.registered}}</li>
+    <li><b>Last seen:</b> {{stats.last_seen}}</li>
+    <li><b>Joins:</b> {{stats.joins}}</li>
+    <li><b>Spawns:</b> {{stats.spawns}}</li>
+    <li><b>Kills:</b> {{stats.kills}}</li>
+    <li><b>Deaths:</b> {{stats.deaths}}</li>
+    <li><b>Suicides:</b> {{stats.suicides}}</li>
+    <li><b>Headshots:</b> {{stats.headshots}}</li>
+    <li><b>XP:</b> {{stats.xp}}</li>
+    <li><b>Items:</b> {{stats.items}}</li>
+    <li><b>Backpack size:</b> {{stats.backpackSize}}</li>
+    <li><b>Quests completed:</b> {{stats.quests}}</li>
+    <li><b>Info-Pickups collected:</b> {{stats.infoPickups}}</li>
+    <li><b>Sent messages:</b> {{stats.sentMessages}}</li>
+    <li><b>Top spree:</b> {{stats.topSpree}}</li>
+    <li><b>Jacked vehicles:</b> {{stats.jackedVehicles}}</li>
+    <li><b>Hidden packages collected:</b> {{stats.hiddenPackages}}</li>
+    <li><b>Finished convoys:</b> {{stats.convoys}}</li>
+    <li><b>Dodo flight time:</b> {{stats.dodoFlightTime}} s</li>
+    <li><b>Online time:</b> {{stats.onlineTime}} min</li>
+    <li><b>Mileage:</b> {{stats.mileage}} km</li>
+  </ul>
+{{/if}}

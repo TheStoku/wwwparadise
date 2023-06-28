@@ -1,0 +1,3 @@
+/node_modules
+/bin/config/default.json
+package-lock.json

@@ -1,0 +1,121 @@
+<h2>{{content}}</h2>
+
+{{#if stats}}
+  <ul class="fa-ul">
+    <li><span class="fa-li"><i class="fa-solid fa-dollar-sign"></i></span><b>Earnings:</b> {{stats.totalEarning}}$</li>
+    <li><span class="fa-li"><i class="fa-solid fa-flask"></i></span><b>XP:</b> {{stats.totalXp}}</li>
+    <li><span class="fa-li"><i class="fa-solid fa-gun"></i></span><b>Kills:</b> {{stats.totalKills}}</li>
+    <li><span class="fa-li"><i class="fa-solid fa-skull"></i></span><b>Deaths:</b> {{stats.totalDeaths}}</li>
+    <li><span class="fa-li"><i class="fa-solid fa-person-falling-burst"></i></span><b>Suicides:</b> {{stats.totalSuicides}}</li>
+    <li><span class="fa-li"><i class="fas fa-car"></i></span><b>Car jacks:</b> {{stats.totalJacks}}</li>
+    <li><span class="fa-li"><i class="fa-solid fa-circle-info"></i></span><b>Collected info pickups:</b> {{stats.collectedInfoPickups}}</li>
+    <li><span class="fa-li"><i class="fa-solid fa-check-double"></i></span><b>Completed quests:</b> {{stats.completedQuests}}</li>
+    <li><span class="fa-li"><i class="fa-solid fa-trophy"></i></span><b>Completed achievements:</b> {{stats.completedAchievements}}</li>
+    <li><span class="fa-li"><i class="fa-solid fa-truck"></i></span><b>Completed convoys:</b> {{stats.completedConvoys}}</li>
+  </ul>
+{{/if}}
+
+{{#if chartData}}
+    <center><h1>Weekly Graph</h1>
+    
+    <p>Kills/Deaths</p></center>
+    <div>
+        <canvas id="myChart1"></canvas>
+    </div>
+
+    <center><p>Earnings</p></center>
+    <div>
+        <canvas id="myChart2"></canvas>
+    </div>
+
+    <center><p>XP</p></center>
+    <div>
+        <canvas id="myChart3"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx1 = document.getElementById('myChart1');
+
+        var chart = decodeURIComponent("{{{chartData}}}");
+        var chartObj = JSON.parse(chart);
+
+        new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: chartObj.timestamp,
+                datasets: [
+                    {
+                        label: 'Kills',
+                        data: chartObj.totalKills,
+                        borderWidth: 1,
+                        cubicInterpolationMode: 'monotone'
+                    },
+                    {
+                        label: 'Deaths',
+                        data: chartObj.totalDeaths,
+                        borderWidth: 1,
+                        cubicInterpolationMode: 'monotone'
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+            }
+            }
+        });
+
+
+        const ctx2 = document.getElementById('myChart2');
+
+        new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: chartObj.timestamp,
+                datasets: [
+                    {
+                        label: 'Earnings',
+                        data: chartObj.totalEarning,
+                        borderWidth: 1,
+                        cubicInterpolationMode: 'monotone'
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+            }
+            }
+        });
+
+        const ctx3 = document.getElementById('myChart3');
+
+        new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: chartObj.timestamp,
+                datasets: [
+                    {
+                        label: 'XP',
+                        data: chartObj.totalXp,
+                        borderWidth: 1,
+                        cubicInterpolationMode: 'monotone'
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+            }
+            }
+        });
+    </script>
+{{/if}}

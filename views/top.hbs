@@ -1,0 +1,85 @@
+<h2>{{content}}</h2>
+
+{{#if topData}}
+    <div id="top">
+        <h2>Kills:</h2>
+        
+        <ol class=".flex-container">
+            {{#each topData.kills}}
+                <li><b>{{this.name}}:</b> {{this.kills}}</li>
+            {{/each}}
+        </ol>
+    </div>
+
+    <div id="top">
+        <h2>Spree:</h2>
+        <ol class=".flex-container">
+            {{#each topData.topSpree}}
+                <li><b>{{this.name}}:</b> {{this.topSpree}}</li>
+            {{/each}}
+        </ol>
+    </div>
+
+    <div id="top">
+        <h2>Deaths:</h2>
+        <ol class=".flex-container">
+            {{#each topData.deaths}}
+                <li><b>{{this.name}}:</b> {{this.deaths}}</li>
+            {{/each}}
+        </ol>
+    </div>
+
+    <div id="top">
+        <h2>Headshots:</h2>
+        <ol class="people_list">
+            {{#each topData.headshots}}
+                <li><b>{{this.name}}:</b> {{this.headshots}}</li>
+            {{/each}}
+        </ol>
+    </div>
+
+    <div id="top">
+        <h2>Joins:</h2>
+        <ol class="people_list">
+            {{#each topData.joins}}
+                <li><b>{{this.name}}:</b> {{this.joins}}</li>
+            {{/each}}
+        </ol>
+    </div>
+
+    <div id="top">
+        <h2>Car Jackers:</h2>
+        <ol class="people_list">
+            {{#each topData.jackedVehicles}}
+                <li><b>{{this.name}}:</b> {{this.jackedVehicles}}</li>
+            {{/each}}
+        </ol>
+    </div>
+
+    <div id="top">
+        <h2>XP:</h2>
+        <ol class="people_list">
+            {{#each topData.xp}}
+                <li><b>{{this.name}}:</b> {{this.xp}}</li>
+            {{/each}}
+        </ol>
+    </div>
+
+    <div id="top">
+        <h2>Dodo Time:</h2>
+        <ol class="people_list">
+            {{#each topData.dodoFlightTime}}
+                <li><b>{{this.name}}:</b> {{this.dodoFlightTime}}</li>
+            {{/each}}
+        </ol>
+    </div>
+
+    <div id="top">
+        <h2>Hidden Packages:</h2>
+        <ol class="people_list">
+            {{#each topData.hiddenPackages}}
+                <li><b>{{this.name}}:</b> {{this.hiddenPackages}}</li>
+            {{/each}}
+        </ol>
+    </div>
+{{/if}}
